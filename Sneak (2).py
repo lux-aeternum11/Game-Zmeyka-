@@ -35,7 +35,7 @@ length = 1
 snake = [(x, y)]
 
 dx, dy = 0, 0
-fps = 20 #скорость
+fps = 50 #скорость
 frame_speed = 5
 frame_counter = 0
 
@@ -84,7 +84,7 @@ while True:
         ran_num_ruins.append(random_num)
         rat_eaten = 0
         points += 1
-    print(ran_num_rat)
+    # print(ran_num_rat)
 
     if ran_num_ruins[-1]>= 20:
         pygame.draw.rect(sc, pygame.Color('#3b1306'), (*ruins, SIZE + 2 * SIZE, SIZE))
@@ -108,7 +108,7 @@ while True:
             rat_eaten = 1
             points += 1
 
-    if points >= 5 and portal_eaten == 0:
+    if points > 5 and portal_eaten == 0:
         pygame.draw.rect(sc, pygame.Color('#7d0a8a'), (*portal, SIZE, SIZE))
         if snake[-1] == portal:
             portal = randrange(0, RES, SIZE), randrange(0, RES, SIZE)
